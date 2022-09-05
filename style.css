@@ -142,7 +142,7 @@ a#register {
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 30em) {
 
     body {
         text-align: center;
