@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: content-box;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 18px;
+    overflow-x: hidden;
+    background: white;
+}
+
+h1 {
+    margin-top: 4rem;
+    font-size: 5rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 8%);
+
+}
+
+span {
+    display: block;
+}
+
+p {
+    width: 70%;
+    line-height: 1.5;
+    color: hsl(0, 0%, 41%);
+    font-weight: 500;
+}
+
+button {
+    font-family:'Epilogue', sans-serif ;
+    font-size: 18px;
+    background-color: hsl(0, 0%, 8%);
+    color:hsl(0, 0%, 98%);
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+}
+
+/*Primary Header*/
+.primary-header {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    margin: 1rem;
+}
+
+.toggler {
+    display: none;
+}
+
+.primary-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:0 3rem;
+    }
+
+
+.nav-items {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    
+    
+}
+
+.nav-items li {
+    margin: 0.5rem;
+}
+
+.nav-items a {
+    text-decoration: none;
+    display: flex;
+    gap: 0.5rem;
+    color: hsl(0, 0%, 41%);
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.right a {
+    text-decoration: none;
+    color: hsl(0, 0%, 41%);
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 5rem;
+    margin: 2% 10% 
+}
+
+
+
+.clients {
+    width: 80%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 4rem;
+}
+.client-img {
+    
+}
+main img {
+    width: 100%;
+}
+
+.header-text {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-img {
+    background-image: url(images/image-hero-desktop.png);
+    background-size: contain;
+    background-repeat:no-repeat;
+}
+
+a#register {
+    border: 2px solid hsl(0, 0%, 41%);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+}
+
+
+@media (max-width: 375px) {
+
+    body {
+        text-align: center;
+        margin:0 2%;
+        font-size: 16px;
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .toggler {
+        padding: 0;
+        display: block;
+        position: absolute;
+        z-index: 20;
+        width: 2rem;
+        aspect-ratio: 1;
+        background:url(images/icon-menu.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        top: 1rem;
+        right: 1rem;
+        
+    }
+
+    .toggler[aria-expanded='true'] {
+        background-image: url(images/icon-close-menu.svg);
+    }
+
+    .primary-navigation {
+        padding: 0;
+        display: block;
+        flex-direction: column;
+        position: fixed;
+        inset: 0 0 0 35%;
+        z-index: 10;
+        background: white;
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: min(20vh, 5rem) 2rem;
+        margin: 0;
+
+        /* min-height: 100vh; */
+        transform: translateX(200%);
+        transition: transform 350ms ease-in ;
+    }
+
+    .right {
+        margin-top: 3rem;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0);
+    }
+
+    .nav-items {
+        flex-direction: column;
+    }
+
+    .right {
+        flex-direction: column;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: 0;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    span {
+        display: inline;
+    }
+
+    p {
+        width: 100%;
+    }
+
+     .header-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+     .clients {
+        width: 100%;
+        margin-top: 1rem;
+     }
+
+     .client-img {
+        margin: 0.8rem;
+     }
+
+    .header-img {
+        margin: 1rem auto;
+        background-image: url(images/image-hero-mobile.png);
+        height: 200px;
+        width: 100%;
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+       }
+}
